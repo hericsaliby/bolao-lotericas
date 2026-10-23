@@ -12,6 +12,7 @@ carrinho.json
 # Gerados
 __pycache__/
 *.zip
+!download/Gerador-Bolao.zip
 *.exe
 _versoes_antigas/
 _para_github/

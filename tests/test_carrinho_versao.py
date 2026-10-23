@@ -32,6 +32,13 @@ class TestVersao(unittest.TestCase):
         self.assertGreater(A._tupla("v1.10.0"), A._tupla("1.9.3"))
         self.assertEqual(A._tupla("v1.0.0"), A._tupla("1.0.0"))
 
+    def test_versao_publicada(self):
+        nova = A.interpretar({"versao": "1.1.0"}, versao_atual="1.0.0", repo="u/r")
+        self.assertEqual(nova["versao"], "1.1.0")
+        self.assertEqual(nova["download"], "https://github.com/u/r/raw/main/download/Gerador-Bolao.zip")
+        self.assertIsNone(A.interpretar({"versao": "1.0.0"}, versao_atual="1.0.0"))
+        self.assertIsNone(A.interpretar({}, versao_atual="1.0.0"))
+
 
 if __name__ == "__main__":
     unittest.main()

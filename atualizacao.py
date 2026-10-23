@@ -1,8 +1,8 @@
 """Versão do programa e aviso de versão nova publicada no GitHub.
 
-Para publicar uma versão nova: aumente VERSAO, gere o zip e crie no GitHub um
-"Release" com a etiqueta v<VERSAO> anexando o zip (passo a passo em COMO_PUBLICAR.txt).
-Quem estiver com uma versão mais antiga vê um aviso no topo da tela.
+A versão publicada fica no arquivo download/versao.json do repositório, junto
+com o zip (download/Gerador-Bolao.zip). Quem estiver com versão mais antiga vê
+um aviso no topo da tela. Como publicar: COMO_PUBLICAR.txt.
 """
 
 import re
@@ -14,23 +14,30 @@ VERSAO = "1.0.0"
 # "usuario/repositorio" no GitHub. Vazio = não procura versão nova.
 REPO_GITHUB = "hericsaliby/bolao-lotericas"
 
+URL_VERSAO = "https://raw.githubusercontent.com/{repo}/main/download/versao.json"
+URL_ZIP = "https://github.com/{repo}/raw/main/download/Gerador-Bolao.zip"
+
 
 def _tupla(versao):
     return tuple(int(x) for x in re.findall(r"\d+", versao or "")[:3])
 
 
+def interpretar(info, versao_atual=VERSAO, repo=REPO_GITHUB):
+    """versao.json publicado -> {"versao", "download", "notas"} se for mais novo; senão None."""
+    publicada = str((info or {}).get("versao", ""))
+    if not publicada or _tupla(publicada) <= _tupla(versao_atual):
+        return None
+    return {"versao": publicada,
+            "download": info.get("download") or URL_ZIP.format(repo=repo),
+            "notas": info.get("notas", "")}
+
+
 def buscar_versao_nova():
-    """Retorna {"versao", "pagina", "download"} se houver versão mais nova; senão None."""
+    """Consulta o GitHub. Sem internet ou sem arquivo: None (tenta de novo depois)."""
     if not REPO_GITHUB:
         return None
     try:
-        d = baixar_json(f"https://api.github.com/repos/{REPO_GITHUB}/releases/latest", 15)
+        info = baixar_json(URL_VERSAO.format(repo=REPO_GITHUB), 15)
     except Exception:
-        return None  # sem internet ou GitHub fora do ar: tenta de novo depois
-    tag = d.get("tag_name", "")
-    if not tag or _tupla(tag) <= _tupla(VERSAO):
         return None
-    zip_url = next((a.get("browser_download_url") for a in d.get("assets", [])
-                    if a.get("name", "").lower().endswith(".zip")), None)
-    return {"versao": tag.lstrip("vV"), "pagina": d.get("html_url"),
-            "download": zip_url or d.get("html_url")}
+    return interpretar(info)

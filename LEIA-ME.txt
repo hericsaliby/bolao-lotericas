@@ -14,7 +14,7 @@ Quando sair versão nova, aparece uma faixa amarela no topo do programa.
 Clique nela, feche o programa e extraia o zip novo NA MESMA PASTA,
 aceitando substituir os arquivos. Suas apostas continuam guardadas.
 A versão mais nova também fica sempre neste link:
-https://github.com/hericsaliby/bolao-lotericas/releases/latest
+https://github.com/hericsaliby/bolao-lotericas/raw/main/download/Gerador-Bolao.zip
 
 COMO USAR
 1. Escolha a loteria no botão de cima.

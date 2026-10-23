@@ -13,7 +13,7 @@ automática dos resultados e nada de jogo repetido.
 
 ## ⬇️ Baixar e usar
 
-**[Baixar a versão mais nova (Windows)](https://github.com/hericsaliby/bolao-lotericas/releases/latest/download/Gerador-Bolao.zip)**
+**[Baixar a versão mais nova (Windows)](https://github.com/hericsaliby/bolao-lotericas/raw/main/download/Gerador-Bolao.zip)**
 
 1. Extraia o zip e abra o **Gerador Bolao.exe**. Não precisa instalar nada.
 2. Se o Windows mostrar *"O Windows protegeu o computador"*: *Mais informações* > *Executar assim mesmo*.
@@ -64,7 +64,7 @@ flowchart LR
     estrategia --> tela["loterias.py<br/>tela (Tkinter)"]
     conferencia --> tela
     carrinho["carrinho.py"] --> tela
-    github["GitHub Releases"] --> atualizacao["atualizacao.py<br/>aviso de versão nova"] --> tela
+    github["GitHub<br/>download/versao.json"] --> atualizacao["atualizacao.py<br/>aviso de versão nova"] --> tela
 ```
 
 **Destaques técnicos**
@@ -76,8 +76,8 @@ flowchart LR
   número, validação fora da amostra, backtest de estratégias e simulação de Monte
   Carlo com teste de significância antes de mostrar qualquer diferença.
 - **Engenharia:** módulos separados por responsabilidade, 27 testes automáticos
-  rodando no GitHub Actions a cada envio, `.exe` com PyInstaller e aviso de versão
-  nova via GitHub Releases.
+  rodando no GitHub Actions a cada envio, `.exe` com PyInstaller e aviso automático de
+  versão nova.
 - **Produto:** feito para colegas não técnicos. Linguagem simples, explicação de
   cada opção na tela e transparência sobre o que **não** aumenta a chance.
 
@@ -101,6 +101,7 @@ pyinstaller --onefile --windowed --name "Gerador Bolao" loterias.py   # gera o .
 | `atualizacao.py` | Versão do programa e aviso de versão nova |
 | `tests/` | Testes automáticos |
 | `docs/` | Metodologia e imagens |
+| `download/` | Zip da versão atual e `versao.json` (lido pelo aviso de versão nova) |
 
 ## Aviso
 
