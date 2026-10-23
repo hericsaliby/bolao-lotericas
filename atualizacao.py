@@ -22,8 +22,10 @@ def _tupla(versao):
     return tuple(int(x) for x in re.findall(r"\d+", versao or "")[:3])
 
 
-def interpretar(info, versao_atual=VERSAO, repo=REPO_GITHUB):
+def interpretar(info, versao_atual=None, repo=None):
     """versao.json publicado -> {"versao", "download", "notas"} se for mais novo; senão None."""
+    versao_atual = versao_atual or VERSAO
+    repo = repo or REPO_GITHUB
     publicada = str((info or {}).get("versao", ""))
     if not publicada or _tupla(publicada) <= _tupla(versao_atual):
         return None
