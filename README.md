@@ -1,6 +1,6 @@
 # Gerador do Bolão — Mega-Sena, Lotofácil e Quina
 
-[![testes](https://github.com/hericsaliby/bolao-loterias/actions/workflows/testes.yml/badge.svg)](https://github.com/hericsaliby/bolao-loterias/actions/workflows/testes.yml)
+[![testes](https://github.com/hericsaliby/bolao-lotericas/actions/workflows/testes.yml/badge.svg)](https://github.com/hericsaliby/bolao-lotericas/actions/workflows/testes.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-.exe-0078D6)
 ![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)
@@ -13,7 +13,7 @@ automática dos resultados e nada de jogo repetido.
 
 ## ⬇️ Baixar e usar
 
-**[Baixar a versão mais nova (Windows)](https://github.com/hericsaliby/bolao-loterias/releases/latest/download/Gerador-Bolao.zip)**
+**[Baixar a versão mais nova (Windows)](https://github.com/hericsaliby/bolao-lotericas/releases/latest/download/Gerador-Bolao.zip)**
 
 1. Extraia o zip e abra o **Gerador Bolao.exe**. Não precisa instalar nada.
 2. Se o Windows mostrar *"O Windows protegeu o computador"*: *Mais informações* > *Executar assim mesmo*.

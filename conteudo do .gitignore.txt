@@ -1,0 +1,17 @@
+﻿# Dados baixados da Caixa (o programa baixa sozinho)
+resultados_*.json
+premios_*.json
+proximos_concursos.json
+
+# Dados pessoais de cada computador
+apostas.json
+jogos_gerados.json
+preferencias.json
+carrinho.json
+
+# Gerados
+__pycache__/
+*.zip
+*.exe
+_versoes_antigas/
+_para_github/

@@ -12,7 +12,7 @@ from dados import baixar_json
 VERSAO = "1.0.0"
 
 # "usuario/repositorio" no GitHub. Vazio = não procura versão nova.
-REPO_GITHUB = "hericsaliby/bolao-loterias"
+REPO_GITHUB = "hericsaliby/bolao-lotericas"
 
 
 def _tupla(versao):
