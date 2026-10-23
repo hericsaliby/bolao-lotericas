@@ -1,0 +1,60 @@
+GERADOR DO BOLÃO - Mega-Sena, Lotofácil e Quina
+================================================
+
+COMO ABRIR
+1. Extraia o zip numa pasta (botão direito > Extrair tudo).
+2. Dê dois cliques em "Gerador Bolao.exe". Não precisa instalar nada.
+
+Se o Windows mostrar "O Windows protegeu o computador":
+clique em "Mais informações" e depois em "Executar assim mesmo".
+(Isso aparece porque o programa não é de uma empresa registrada.)
+
+COMO ATUALIZAR
+Quando sair versão nova, aparece uma faixa amarela no topo do programa.
+Clique nela, feche o programa e extraia o zip novo NA MESMA PASTA,
+aceitando substituir os arquivos. Suas apostas continuam guardadas.
+A versão mais nova também fica sempre neste link:
+https://github.com/hericsaliby/bolao-loterias/releases/latest
+
+COMO USAR
+1. Escolha a loteria no botão de cima.
+2. Escolha quantos jogos e o estilo (o recomendado já vem marcado).
+   Tem números de que gosta? Digite em "Meus números" ou clique em
+   "Escolher no volante": eles entram em todos os jogos e o programa
+   completa o resto. Cada loteria guarda os seus números.
+3. Clique em GERAR JOGOS. Os números que saíram no último sorteio ficam
+   destacados em amarelo. "Copiar" monta a mensagem pronta para o WhatsApp
+   (concurso, data, prêmio, jogos e custo).
+4. Marque a caixinha dos jogos de que gostou e clique em
+   "Pôr marcados no carrinho". No "Carrinho" você decide depois:
+   marque os jogos e clique em "Registrar marcados como apostados"
+   (os que você jogou) ou "Remover marcados" (os que desistiu).
+5. Quando sair o resultado, o programa confere sozinho os jogos
+   registrados e avisa quanto o bolão ganhou. Em "Minhas apostas"
+   aparece o gasto, o ganho e o saldo do bolão.
+Jogos feitos na lotérica ou no app da Caixa (inclusive com 7 ou mais
+números) entram em "Minhas apostas" > "Adicionar jogos feitos fora do programa".
+
+O QUE ELE FAZ
+- Foge dos números que o público mais aposta (datas de aniversário,
+  sequências). A chance de ganhar é a mesma, mas se ganhar o prêmio
+  é dividido com menos gente. Na Mega-Sena a diferença chega a 2x;
+  na Quina ~1,5x; na Lotofácil é pequena.
+- Espalha os jogos do bolão para repetirem o mínimo de números entre si.
+- Nunca gera um jogo que já foi sorteado nem repete jogo já gerado.
+- Mostra a data e o prêmio do próximo sorteio, o histórico de cada jogo
+  e a chance real de cada prêmio.
+- Busca tudo no site da Caixa ao abrir e a cada 15 minutos.
+
+SOBRE "PREVISÃO"
+Cada sorteio é independente: nenhum número fica "devendo" e números
+quentes não têm mais chance de sair. O programa não promete acertar
+mais; ele ajuda a ganhar mais quando acertar.
+
+ARQUIVOS NA PASTA
+jogos_gerados.json = jogos já gerados; apostas.json = apostas do bolão;
+carrinho.json = jogos no carrinho; preferencias.json = seus números favoritos.
+Não apague se quiser manter o histórico.
+
+Precisa de internet na primeira vez para baixar os resultados.
+A pasta "codigo-fonte" é só para quem tem Python instalado.
